@@ -10,5 +10,9 @@ describe('Testing input for validation:', () => {
       const arrayMax = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 10, 2, 3];
       expect(bowling.verifyArr(arrayMax)).toBe(true);
     });
+    it('Testing an input arrayw with valid length', () => {
+      const arrayMax = [1, 2, 1, 2, 1, 2, 1, 2, 6, 4, 10, 1, 2, 1, 2, 1, 2, 10, 2, 3];
+      expect(bowling.verifyArr(arrayMax)).toBe(true);
+    });
   });
 });
