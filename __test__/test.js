@@ -6,5 +6,9 @@ describe('Testing input for validation:', () => {
       const arrayMin = [10, 10, 10, 10, 10, 10, 10, 10, 10, 2, 3];
       expect(bowling.verifyArr(arrayMin)).toBe(true);
     });
+    it('Testing for max array length of 21', () => {
+      const arrayMax = [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 10, 2, 3];
+      expect(bowling.verifyArr(arrayMax)).toBe(true);
+    });
   });
 });
