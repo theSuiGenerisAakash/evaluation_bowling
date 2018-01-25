@@ -160,5 +160,9 @@ describe('Testing input for validation:', () => {
       const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 3, 7, 10, 4];
       expect(bowling.score(trivialArr)).toBe(-1);
     });
+    it('Testing sum of mix of all', () => {
+      const trivialArr = [10, 0, 5, 10, 10, 2, 4, 10, 10, 10, 10, 3, 7, 10];
+      expect(bowling.score(trivialArr)).toBe(187);
+    });
   });
 });
