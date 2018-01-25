@@ -14,6 +14,8 @@ const verifyArr = function verifyArr(arr) {
       if (arr[prev] + arr[curr] < 10) {
         prev += 2;
         curr = prev + 1;
+      } else {
+        return false;
       }
     }
     return true;
