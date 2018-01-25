@@ -8,17 +8,21 @@ const verifyNum = num => num >= 0 && num <= 10;
 const verifyArr = function verifyArr(arr) {
   if (arr.every(elem => verifyNum(elem))) {
     let prev = 0;
-    let curr = 1;
+    let noOfFrames = 0;
     const len = arr.length;
-    for (; prev < len;) {
-      if (arr[prev] + arr[curr] < 10) {
+    for (; noOfFrames < 10;) {
+      if (arr[prev] + arr[prev + 1] < 10) {
         prev += 2;
-        curr = prev + 1;
+      } else if (arr[prev] === 10) {
+        prev += 1;
       } else {
         return false;
       }
+      noOfFrames += 1;
     }
-    return true;
+    if ((arr[prev - 1] === 10 && len - prev === 2) || (arr[prev - 1] !== 10 && prev === len)) {
+      return true;
+    }
   }
   return false;
 };
