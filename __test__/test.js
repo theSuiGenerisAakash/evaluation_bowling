@@ -46,5 +46,9 @@ describe('Testing input for validation:', () => {
       const throwFrame = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
       expect(bowling.verifyArr(throwFrame)).toBe(false);
     });
+    it('Testing mix of trivial and strikes array', () => {
+      const throwFrame = [10, 10, 10, 10, 10, 10, 3, 6, 10, 2, 4, 10, 10, 3, 5];
+      expect(bowling.verifyArr(throwFrame)).toBe(false);
+    });
   });
 });
