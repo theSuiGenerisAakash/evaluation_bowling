@@ -24,5 +24,9 @@ describe('Testing input for validation:', () => {
       const minElem = 11;
       expect(bowling.verifyNum(minElem)).toBe(false);
     });
+    it('Testing a valid element', () => {
+      const minElem = 3;
+      expect(bowling.verifyNum(minElem)).toBe(true);
+    });
   });
 });
