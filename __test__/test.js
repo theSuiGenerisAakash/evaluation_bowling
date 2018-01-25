@@ -156,7 +156,7 @@ describe('Testing input for validation:', () => {
       const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 3, 7, 10];
       expect(bowling.score(trivialArr)).toBe(273);
     });
-    it('Testing sum of mix of spares and strikes - 2', () => {
+    it('Testing sum of mix of invalid spares and strikes', () => {
       const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 3, 7, 10, 4];
       expect(bowling.score(trivialArr)).toBe(-1);
     });
