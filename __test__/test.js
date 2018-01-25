@@ -112,5 +112,9 @@ describe('Testing input for validation:', () => {
       const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       expect(bowling.score(trivialArr)).toBe(0);
     });
+    it('Testing sum of invalid trivial frames array', () => {
+      const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 5, 4, 2, 1, 6, 1, 4, 2];
+      expect(bowling.score(trivialArr)).toBe(-1);
+    });
   });
 });
