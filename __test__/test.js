@@ -15,4 +15,10 @@ describe('Testing input for validation:', () => {
       expect(bowling.verifyArr(arrayMax)).toBe(true);
     });
   });
+  describe('Testing array elements for validity', () => {
+    it('Testing the element to be greater than -1', () => {
+      const minElem = 0;
+      expect(bowling.verifyNum(minElem)).toBe(true);
+    });
+  });
 });
