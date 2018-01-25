@@ -124,5 +124,9 @@ describe('Testing input for validation:', () => {
       const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
       expect(bowling.score(trivialArr)).toBe(300);
     });
+    it('Testing sum of trivial and strikes', () => {
+      const trivialArr = [10, 10, 10, 0, 0, 10, 10, 3, 4, 10, 0, 0, 10, 0, 0];
+      expect(bowling.score(trivialArr)).toBe(127);
+    });
   });
 });
