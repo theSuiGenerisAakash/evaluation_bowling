@@ -148,5 +148,9 @@ describe('Testing input for validation:', () => {
       const trivialArr = [3, 7, 4, 6, 4, 2, 4, 2, 4, 2, 4, 0, 4, 0, 4, 0, 0, 6, 4, 6];
       expect(bowling.score(trivialArr)).toBe(-1);
     });
+    it('Testing sum of mix of spares and strikes', () => {
+      const trivialArr = [3, 7, 4, 6, 10, 10, 10, 10, 10, 5, 5, 7, 3, 10, 10, 10];
+      expect(bowling.score(trivialArr)).toBe(236);
+    });
   });
 });
