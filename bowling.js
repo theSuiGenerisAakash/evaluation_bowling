@@ -45,18 +45,21 @@ const score = function score(allThrows) {
       if (allThrows[prev] + allThrows[prev + 1] < 10) { // for trivial frame
         scoreSum += allThrows[prev] + allThrows[prev + 1];
         prev += 2;
-      } else if (allThrows[prev] === 10) { // tesing for strike frame
+      } else if (allThrows[prev] === 10) { // testing for strike frame
         scoreSum += 10 + allThrows[prev + 1] + allThrows[prev + 2];
         prev += 1;
-      } else {
-        return -1;
+      } else if (allThrows[prev] + allThrows[prev + 1] === 10) { // testing for spare frame
+        scoreSum += 10 + allThrows[prev + 2];
+        prev += 2;
       }
       noOfFrames += 1;
     }
-    // testing for 11th frame in case of 10th frame being strike
-    if ((allThrows[prev - 1] === 10 && len - prev === 2)
-    // testing for no 11th frames for trivial 10th frame
-    || (allThrows[prev - 1] !== 10 && prev === len)) {
+    // last frame test for trivial case
+    if (((allThrows[prev - 1] !== 10) && (allThrows[prev - 1] + allThrows[prev - 2] !== 10)
+    && (prev === len)) ||
+     (allThrows[prev - 1] === 10 && len - prev === 2) || // last test case for strike
+     // last test case for spare
+     (allThrows[prev - 1] + allThrows[prev - 2] === 10 && len - prev === 1)) {
       return scoreSum;
     }
   }
