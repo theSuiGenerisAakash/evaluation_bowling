@@ -15,12 +15,15 @@ const verifyArr = function verifyArr(arr) {
         prev += 2;
       } else if (arr[prev] === 10) {
         prev += 1;
+      } else if (arr[prev] + arr[prev + 1] === 10) {
+        prev += 2;
       } else {
         return false;
       }
       noOfFrames += 1;
     }
-    if ((arr[prev - 1] === 10 && len - prev === 2) || (arr[prev - 1] !== 10 && prev === len)) {
+    if ((arr[prev - 1] === 10 && len - prev === 2) || (arr[prev - 1] !== 10 && (prev === len
+      || len - prev === 1))) {
       return true;
     }
   }

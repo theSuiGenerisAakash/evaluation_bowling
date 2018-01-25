@@ -62,5 +62,9 @@ describe('Testing input for validation:', () => {
       const throwFrame = [10, 10, 10, 10, 10, 10, 10, 10, 3, 4, 10, 10];
       expect(bowling.verifyArr(throwFrame)).toBe(false);
     });
+    it('Testing all spares', () => {
+      const throwFrame = [4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 6];
+      expect(bowling.verifyArr(throwFrame)).toBe(true);
+    });
   });
 });
