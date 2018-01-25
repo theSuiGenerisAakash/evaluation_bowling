@@ -103,82 +103,82 @@ describe('Testing input for validation:', () => {
       expect(bowling.verifyArr(throwFrame)).toBe(false);
     });
   });
-  describe('Testing score function', () => {
-    it('Testing sum of an array with trivial frames', () => {
-      const trivialArr = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
-      expect(bowling.score(trivialArr)).toBe(90);
-    });
-    it('Testing all 0 frames array', () => {
-      const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-      expect(bowling.score(trivialArr)).toBe(0);
-    });
-    it('Testing sum of invalid trivial frames array', () => {
-      const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 5, 4, 2, 1, 6, 1, 4, 2];
-      expect(bowling.score(trivialArr)).toBe(-1);
-    });
-    it('Testing sum of invalid trivial frames array - 2', () => {
-      const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 6, 10, 1, 6, 1, 4, 2, 10, 10];
-      expect(bowling.score(trivialArr)).toBe(-1);
-    });
-    it('Testing sum of all strikes', () => {
-      const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
-      expect(bowling.score(trivialArr)).toBe(300);
-    });
-    it('Testing sum of trivial and strikes', () => {
-      const trivialArr = [10, 10, 10, 0, 0, 10, 10, 3, 4, 10, 0, 0, 10, 0, 0];
-      expect(bowling.score(trivialArr)).toBe(127);
-    });
-    it('Testing sum of invalid trivial and strikes', () => {
-      const trivialArr = [10, 10, 10, 0, 0, 10, 10, 3, 4, 10, 0, 0, 10];
-      expect(bowling.score(trivialArr)).toBe(-1);
-    });
-    it('Testing sum of all spares', () => {
-      const trivialArr = [4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4];
-      expect(bowling.score(trivialArr)).toBe(140);
-    });
-    it('Testing sum of all invalid spares', () => {
-      const trivialArr = [4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4];
-      expect(bowling.score(trivialArr)).toBe(-1);
-    });
-    it('Testing sum of mix of valid spares and trivials', () => {
-      const trivialArr = [3, 7, 4, 6, 4, 2, 4, 2, 4, 2, 4, 0, 4, 0, 4, 0, 0, 6, 4, 6, 1];
-      expect(bowling.score(trivialArr)).toBe(75);
-    });
-    it('Testing sum of mix of invalid spares and trivials', () => {
-      const trivialArr = [3, 7, 4, 6, 4, 2, 4, 2, 4, 2, 4, 0, 4, 0, 4, 0, 0, 6, 4, 6];
-      expect(bowling.score(trivialArr)).toBe(-1);
-    });
-    it('Testing sum of mix of spares and strikes', () => {
-      const trivialArr = [3, 7, 4, 6, 10, 10, 10, 10, 10, 5, 5, 7, 3, 10, 10, 10];
-      expect(bowling.score(trivialArr)).toBe(236);
-    });
-    it('Testing sum of mix of spares and strikes - 2', () => {
-      const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 3, 7, 10];
-      expect(bowling.score(trivialArr)).toBe(273);
-    });
-    it('Testing sum of mix of invalid spares and strikes', () => {
-      const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 3, 7, 10, 4];
-      expect(bowling.score(trivialArr)).toBe(-1);
-    });
-    it('Testing sum of mix of all', () => {
-      const trivialArr = [10, 0, 5, 10, 10, 2, 4, 10, 10, 10, 10, 3, 7, 10];
-      expect(bowling.score(trivialArr)).toBe(187);
-    });
-    it('Testing sum of mix of all - 2', () => {
-      const trivialArr = [10, 0, 5, 10, 10, 2, 4, 0, 0, 10, 10, 10, 3, 0];
-      expect(bowling.score(trivialArr)).toBe(133);
-    });
-    it('Testing sum of mix of all - 3', () => {
-      const trivialArr = [10, 0, 5, 10, 10, 2, 4, 0, 0, 10, 10, 10, 3, 7, 1];
-      expect(bowling.score(trivialArr)).toBe(148);
-    });
-    it('Testing sum of invalid mix of all', () => {
-      const trivialArr = [10, 0, 5, 10, 10, 2, 4, 0, 0, 10, 10, 10, 3, 7, 10, 10];
-      expect(bowling.score(trivialArr)).toBe(-1);
-    });
-    it('Testing sum of invalid mix of all - 2', () => {
-      const trivialArr = [10, 3, 7, 10, 10];
-      expect(bowling.score(trivialArr)).toBe(-1);
-    });
+});
+describe('Testing score function', () => {
+  it('Testing sum of an array with trivial frames', () => {
+    const trivialArr = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
+    expect(bowling.score(trivialArr)).toBe(90);
+  });
+  it('Testing all 0 frames array', () => {
+    const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    expect(bowling.score(trivialArr)).toBe(0);
+  });
+  it('Testing sum of invalid trivial frames array', () => {
+    const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 5, 4, 2, 1, 6, 1, 4, 2];
+    expect(bowling.score(trivialArr)).toBe(-1);
+  });
+  it('Testing sum of invalid trivial frames array - 2', () => {
+    const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 6, 10, 1, 6, 1, 4, 2, 10, 10];
+    expect(bowling.score(trivialArr)).toBe(-1);
+  });
+  it('Testing sum of all strikes', () => {
+    const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
+    expect(bowling.score(trivialArr)).toBe(300);
+  });
+  it('Testing sum of trivial and strikes', () => {
+    const trivialArr = [10, 10, 10, 0, 0, 10, 10, 3, 4, 10, 0, 0, 10, 0, 0];
+    expect(bowling.score(trivialArr)).toBe(127);
+  });
+  it('Testing sum of invalid trivial and strikes', () => {
+    const trivialArr = [10, 10, 10, 0, 0, 10, 10, 3, 4, 10, 0, 0, 10];
+    expect(bowling.score(trivialArr)).toBe(-1);
+  });
+  it('Testing sum of all spares', () => {
+    const trivialArr = [4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4];
+    expect(bowling.score(trivialArr)).toBe(140);
+  });
+  it('Testing sum of all invalid spares', () => {
+    const trivialArr = [4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4];
+    expect(bowling.score(trivialArr)).toBe(-1);
+  });
+  it('Testing sum of mix of valid spares and trivials', () => {
+    const trivialArr = [3, 7, 4, 6, 4, 2, 4, 2, 4, 2, 4, 0, 4, 0, 4, 0, 0, 6, 4, 6, 1];
+    expect(bowling.score(trivialArr)).toBe(75);
+  });
+  it('Testing sum of mix of invalid spares and trivials', () => {
+    const trivialArr = [3, 7, 4, 6, 4, 2, 4, 2, 4, 2, 4, 0, 4, 0, 4, 0, 0, 6, 4, 6];
+    expect(bowling.score(trivialArr)).toBe(-1);
+  });
+  it('Testing sum of mix of spares and strikes', () => {
+    const trivialArr = [3, 7, 4, 6, 10, 10, 10, 10, 10, 5, 5, 7, 3, 10, 10, 10];
+    expect(bowling.score(trivialArr)).toBe(236);
+  });
+  it('Testing sum of mix of spares and strikes - 2', () => {
+    const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 3, 7, 10];
+    expect(bowling.score(trivialArr)).toBe(273);
+  });
+  it('Testing sum of mix of invalid spares and strikes', () => {
+    const trivialArr = [10, 10, 10, 10, 10, 10, 10, 10, 10, 3, 7, 10, 4];
+    expect(bowling.score(trivialArr)).toBe(-1);
+  });
+  it('Testing sum of mix of all', () => {
+    const trivialArr = [10, 0, 5, 10, 10, 2, 4, 10, 10, 10, 10, 3, 7, 10];
+    expect(bowling.score(trivialArr)).toBe(187);
+  });
+  it('Testing sum of mix of all - 2', () => {
+    const trivialArr = [10, 0, 5, 10, 10, 2, 4, 0, 0, 10, 10, 10, 3, 0];
+    expect(bowling.score(trivialArr)).toBe(133);
+  });
+  it('Testing sum of mix of all - 3', () => {
+    const trivialArr = [10, 0, 5, 10, 10, 2, 4, 0, 0, 10, 10, 10, 3, 7, 1];
+    expect(bowling.score(trivialArr)).toBe(148);
+  });
+  it('Testing sum of invalid mix of all', () => {
+    const trivialArr = [10, 0, 5, 10, 10, 2, 4, 0, 0, 10, 10, 10, 3, 7, 10, 10];
+    expect(bowling.score(trivialArr)).toBe(-1);
+  });
+  it('Testing sum of invalid mix of all - 2', () => {
+    const trivialArr = [10, 3, 7, 10, 10];
+    expect(bowling.score(trivialArr)).toBe(-1);
   });
 });
