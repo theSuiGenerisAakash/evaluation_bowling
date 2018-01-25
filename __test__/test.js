@@ -54,5 +54,9 @@ describe('Testing input for validation:', () => {
       const throwFrame = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
       expect(bowling.verifyArr(throwFrame)).toBe(true);
     });
+    it('Testing 0 score invalid array', () => {
+      const throwFrame = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      expect(bowling.verifyArr(throwFrame)).toBe(false);
+    });
   });
 });
