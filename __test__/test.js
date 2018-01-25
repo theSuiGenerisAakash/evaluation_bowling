@@ -108,5 +108,9 @@ describe('Testing input for validation:', () => {
       const trivialArr = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
       expect(bowling.score(trivialArr)).toBe(90);
     });
+    it('Testing all 0 frames array', () => {
+      const trivialArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      expect(bowling.score(trivialArr)).toBe(0);
+    });
   });
 });
