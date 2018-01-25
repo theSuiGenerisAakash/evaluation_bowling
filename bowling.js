@@ -25,10 +25,11 @@ const verifyArr = function verifyArr(arr) {
       }
       noOfFrames += 1;
     }
-    // Testing there's an 11th frame with valid length
-    // only if there's a spare or strike in the 10th frame
-    if ((arr[prev - 1] === 10 && len - prev === 2) || (arr[prev - 1] !== 10 && (prev === len
-      || len - prev === 1))) {
+
+    // last frame test for trivial case
+    if (((arr[prev - 1] !== 10) && (arr[prev - 1] + arr[prev - 2] !== 10) && (prev === len)) ||
+     (arr[prev - 1] === 10 && len - prev === 2) || // last test case for strike
+     (arr[prev - 1] + arr[prev - 2] === 10 && len - prev === 1)) { // last test case for spare
       return true;
     }
   }
