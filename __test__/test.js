@@ -20,5 +20,9 @@ describe('Testing input for validation:', () => {
       const minElem = 0;
       expect(bowling.verifyNum(minElem)).toBe(true);
     });
+    it('Testing the element to be lesser than 11', () => {
+      const minElem = 11;
+      expect(bowling.verifyNum(minElem)).toBe(false);
+    });
   });
 });
