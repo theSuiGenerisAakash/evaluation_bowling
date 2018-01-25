@@ -34,6 +34,7 @@ const verifyArr = function verifyArr(arr) {
   }
   return false;
 };
+
 module.exports = {
   verifyArrLen, verifyNum, verifyArr,
 };
