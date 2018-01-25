@@ -34,8 +34,8 @@ describe('Testing input for validation:', () => {
       const throwFrame = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
       expect(bowling.verifyArr(throwFrame)).toBe(true);
     });
-    it('Testing valid throw frames with sum 10 or more than 10', () => {
-      const throwFrame = [3, 6, 3, 6, 3, 8, 3, 6, 4, 6, 3, 8, 3, 6, 3, 6, 3, 6, 3, 6];
+    it('Testing throw frames with sum 10 or more than 10', () => {
+      const throwFrame = [3, 6, 3, 6, 3, 8, 3, 6, 5, 6, 3, 8, 3, 6, 3, 6, 3, 6, 3, 6];
       expect(bowling.verifyArr(throwFrame)).toBe(false);
     });
   });
