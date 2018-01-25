@@ -86,5 +86,9 @@ describe('Testing input for validation:', () => {
       const throwFrame = [1, 9, 2, 4, 1, 9, 1, 9, 1, 9, 0, 9, 1, 9, 1, 9, 1, 9, 1, 4, 1, 9];
       expect(bowling.verifyArr(throwFrame)).toBe(false);
     });
+    it('Testing mix of spares and strikes', () => {
+      const throwFrame = [1, 9, 2, 4, 1, 9, 1, 9, 1, 9, 0, 9, 1, 9, 1, 9, 1, 9, 10, 1, 9];
+      expect(bowling.verifyArr(throwFrame)).toBe(true);
+    });
   });
 });
