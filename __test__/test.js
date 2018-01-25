@@ -78,5 +78,9 @@ describe('Testing input for validation:', () => {
       const throwFrame = [1, 9, 1, 9, 1, 9, 1, 9, 1, 9, 2, 9, 1, 9, 1, 9, 1, 9, 1, 10, 1, 9];
       expect(bowling.verifyArr(throwFrame)).toBe(false);
     });
+    it('Testing mix of spares and trivial (less than 10) scores', () => {
+      const throwFrame = [1, 9, 2, 4, 1, 9, 1, 9, 1, 9, 0, 9, 1, 9, 1, 9, 1, 9, 1, 4];
+      expect(bowling.verifyArr(throwFrame)).toBe(true);
+    });
   });
 });
