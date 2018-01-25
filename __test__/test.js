@@ -103,4 +103,10 @@ describe('Testing input for validation:', () => {
       expect(bowling.verifyArr(throwFrame)).toBe(false);
     });
   });
+  describe('Testing score function', () => {
+    it('Testing sum of an array with trivial frames', () => {
+      const trivialArr = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
+      expect(bowling.score(trivialArr)).toBe(90);
+    });
+  });
 });

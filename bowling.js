@@ -7,7 +7,7 @@ const verifyNum = num => num >= 0 && num <= 10;
 // Checking for throw frames for sum >= 0 and <10
 const verifyArr = function verifyArr(arr) {
   // testing if elements are valid before testing frames
-  if (arr.every(elem => verifyNum(elem))) {
+  if (arr.every(elem => verifyNum(elem)) === true) {
     let prev = 0;
     let noOfFrames = 0;
     const len = arr.length;
@@ -36,6 +36,28 @@ const verifyArr = function verifyArr(arr) {
   return false;
 };
 
+const score = function score(allThrows) {
+  if (verifyArr(allThrows) === true) {
+    let prev = 0;
+    let noOfFrames = 0;
+    let scoreSum = 0;
+    // const len = allThrows.length;
+    for (; noOfFrames < 10;) {
+      if (allThrows[prev] + allThrows[prev + 1] < 10) { // for trivial frame
+        scoreSum += allThrows[prev] + allThrows[prev + 1];
+        prev += 2;
+      } else {
+        return -1;
+      }
+      noOfFrames += 1;
+    }
+    if (noOfFrames === 10) {
+      return scoreSum;
+    }
+  }
+  return -1;
+};
+
 module.exports = {
-  verifyArrLen, verifyNum, verifyArr,
+  verifyArrLen, verifyNum, verifyArr, score,
 };
