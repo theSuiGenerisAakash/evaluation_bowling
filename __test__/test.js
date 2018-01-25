@@ -66,5 +66,9 @@ describe('Testing input for validation:', () => {
       const throwFrame = [4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 6];
       expect(bowling.verifyArr(throwFrame)).toBe(true);
     });
+    it('Testing all spares with invalid 11th frame', () => {
+      const throwFrame = [4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 4, 6, 6, 4];
+      expect(bowling.verifyArr(throwFrame)).toBe(false);
+    });
   });
 });
