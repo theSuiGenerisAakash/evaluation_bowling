@@ -40,17 +40,23 @@ const score = function score(allThrows) {
     let prev = 0;
     let noOfFrames = 0;
     let scoreSum = 0;
-    // const len = allThrows.length;
+    const len = allThrows.length;
     for (; noOfFrames < 10;) {
       if (allThrows[prev] + allThrows[prev + 1] < 10) { // for trivial frame
         scoreSum += allThrows[prev] + allThrows[prev + 1];
         prev += 2;
+      } else if (allThrows[prev] === 10) { // tesing for strike frame
+        scoreSum += 10 + allThrows[prev + 1] + allThrows[prev + 2];
+        prev += 1;
       } else {
         return -1;
       }
       noOfFrames += 1;
     }
-    if (noOfFrames === 10) {
+    // testing for 11th frame in case of 10th frame being strike
+    if ((allThrows[prev - 1] === 10 && len - prev === 2)
+    // testing for no 11th frames for trivial 10th frame
+    || (allThrows[prev - 1] !== 10 && prev === len)) {
       return scoreSum;
     }
   }
